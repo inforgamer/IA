@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.env/
+*.sqlite3
+*.db
+
+# Áudios temporários
+*.mp3
+*.wav
+temp*/
+
+# Pygame e TTS
+*.ogg
+
+# VSCode
+.vscode/
+
+# Outros arquivos grandes que não quer subir
+*.vrm

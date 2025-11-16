@@ -1,0 +1,2 @@
+Upar novo model
+ollama create model -f Modelfile
