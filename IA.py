@@ -1,35 +1,18 @@
-import requests
-import json
+#IA.py
+import requests as req
 
-def pensar(texto_usuario):
-    if not texto_usuario.strip():
-        return ""
 
-    # prompt da VTuber
-    prompt_personalidade = (
-        ""
-    )
+url = "http://127.0.0.1:1234/v1/chat/completions"
 
-    url = "http://localhost:11434/api/generate"
-    payload = {
-        "model": "model",
-        "prompt": prompt_personalidade + texto_usuario,
-        "stream": True
+def ia(mensagem):
+
+    data = {
+        "model": "meta-llama-3.1-8b-instruct",
+        "messages": [
+            {"role": "user", "content": mensagem}
+        ]
     }
 
-    resposta_texto = ""
-    try:
-        with requests.post(url, json=payload, stream=True) as resp:
-            for linha in resp.iter_lines():
-                if not linha:
-                    continue
-                try:
-                    data = json.loads(linha.decode("utf-8"))
-                except:
-                    continue
-                parte = data.get("response", "")
-                resposta_texto += parte
-    except Exception as e:
-        print("Erro IA:", e)
-
-    return resposta_texto
+    response = req.post(url, json=data)
+    resposta = response.json()
+    print(resposta["choices"][0]["message"]["content"])

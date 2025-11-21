@@ -1,2 +1,9 @@
-Upar novo model
-ollama create model -f Modelfile
+pip install SpeechRecognition
+pip install pyaudio
+pip install edge_tts
+https://lmstudio.ai
+pip install lmstudio
+pip install requests
+
+
+python3 Microfone.py 2>/dev/null
