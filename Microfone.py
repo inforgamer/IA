@@ -1,3 +1,4 @@
+#Microfone.py
 import speech_recognition as sr
 
 r = sr.Recognizer()
@@ -9,7 +10,10 @@ def ouvir_microfone():
         r.adjust_for_ambient_noise(source)
         audio = r.listen(source)
         texto = r.recognize_google(audio, language = "pt-BR", show_all = False)
-        print(texto)
+       
         return texto
 
+if __name__ == "__main__":
+   retorno =ouvir_microfone()
 
+   print("Você disse: " + retorno)

@@ -4,6 +4,7 @@ pip install edge_tts
 https://lmstudio.ai
 pip install lmstudio
 pip install requests
-
+pip install pydub
+sudo apt update && sudo apt install ffmpeg -y
 
 python3 Microfone.py 2>/dev/null
