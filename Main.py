@@ -4,6 +4,7 @@ import asyncio as aio
 from Microfone import ouvir_microfone
 from IA import ia
 from Voz import falar
+#from vmc import envio_pacote
 
 x = 0
 while x == 0:
